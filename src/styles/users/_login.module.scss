@@ -1,0 +1,105 @@
+$red :  rgb(178, 12, 12);
+$gold : rgb(205, 176, 109);
+$gray : #C0C0C0;
+
+
+.googleIcon {
+  // border-radius: 20px;
+
+  width: 220px;
+  height: auto;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 40px;
+  border-radius: 5px;
+  background-color: #C0C0C0;
+  // box-shadow: 0px 5px 0px  gainsboro;
+}
+
+
+.googleIcon:hover {
+  // transform: translateX(-1px) translateY(5px) ;
+  opacity: .5;
+}
+
+.iconGroup {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+ .main{
+  position: relative;
+  margin: 90px 0;
+  padding: 0;
+  flex-wrap: wrap;
+  // background-color:#C0C0C0;;
+  height: 440px;
+
+ }
+
+ .form {
+  position: absolute;
+  top:5%;
+  left: 50%;
+  transform: translateX(-50%);
+  // background-color: red;
+ }
+
+
+ .buttonGroup {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  // float: right;
+  margin-top: 20px;
+ }
+
+ .LoginButton {
+  width: 100%;
+  margin: 0 20px;
+ }
+
+.Link{
+    margin: 10px auto;
+    display: inline-block;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .headerspan {
+    position: relative;
+  }
+  
+  .headerspan::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: RGB(107, 1, 0);
+    bottom: -10px;               /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1);     /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.5s; /*変形の時間*/
+    }
+    
+    .headerspan:hover::after {
+    transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+    }
+  
+  .headerspan:hover::after {
+    transform: scale(1, 1);
+  
+  }
+
+  // .Link:hover::after {
+  //   transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+  //   }

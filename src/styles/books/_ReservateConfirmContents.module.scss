@@ -1,0 +1,520 @@
+//共通
+
+
+* {
+  color: rgb(65, 65, 65);
+  max-width: 100%;
+
+}
+
+//コンポーネント背景色
+$mainColor: rgb(248, 248, 248);
+
+//レスポンシブ
+$breakpoints: (
+  pc: "screen and (min-width:1200px)",
+  tab: "screen and (max-width:610px)",
+  tab2: "screen and (max-width:1100px)",
+  sp: "screen and (max-width:414px)",
+);
+
+@mixin mq($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.subscriber {
+  background-color: $mainColor;
+  margin-top: 30px;
+  padding: 10px;
+  width: 550px;
+  box-shadow: 0px 0px 8px -4px #777777;
+  @include mq(sp) {
+    width: 300px;
+    font-size: 10px;
+  }
+  @include mq(tab) {
+    width: 350px;
+    font-size: 12px;
+    margin: 10px auto;
+  }
+  @include mq(tab2) {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.subscriber p {
+  margin-top: 10px;
+}
+
+.subscriberInfo {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.lodger {
+  background-color: $mainColor;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 550px;
+  box-shadow: 0px 0px 8px -4px #777777;
+  @include mq(sp) {
+    width: 300px;
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  @include mq(tab) {
+    width: 350px;
+    font-size: 12px;
+    margin: 10px auto;
+  }
+  @include mq(tab2) {
+    width: 700px;
+    margin: 20px auto;
+  }
+}
+
+.lodger ul {
+  list-style-type: none;
+}
+
+.lodgerInfo {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.reservateplan {
+  background-color: $mainColor;
+  width: 550px;
+  max-height: 460px;
+  margin-top: 30px;
+  margin-right: 20px;
+  padding: 10px;
+  box-shadow: 0px 0px 8px -4px #777777;
+  @include mq(sp) {
+    width: 300px;
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  @include mq(tab) {
+    width: 350px;
+    font-size: 12px;
+    margin: 10px auto;
+  }
+  @include mq(tab2) {
+    width: 700px;
+    margin: 10px auto;
+  }
+  ul {
+    list-style-type: none;
+    line-height: 40px;
+    margin: 25px 0;
+  }
+  span {
+    display: inline-block;
+    width: 125px;
+    margin: 0 10px;
+    @include mq(sp) {
+      width: 95px;
+    }
+  }
+  
+}
+
+.reservateplan button {
+  width: 45px;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.backBtn {
+  display: block;
+  width: 45px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.backBtn {
+  position: relative;
+}
+
+.reservePlanContents {
+  position: relative;
+  ul p {
+    display: inline;
+    @include mq(sp) {
+      font-size: 10px;
+    }
+  }
+}
+
+.backBtn::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: RGB(107, 1, 0);
+  bottom: -10px; /*アンダーラインがaタグの下端から現れる*/
+  transform: scale(0, 1); /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+  transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+  transition: transform 0.5s; /*変形の時間*/
+}
+
+.backBtn:hover::after {
+  transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+}
+
+.payment {
+  background-color: $mainColor;
+  margin: 20px auto;
+  padding: 10px;
+  width: 1000px;
+  box-shadow: 0px 0px 8px -4px #777777;
+  @include mq(sp) {
+    width: 350px;
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  @include mq(tab) {
+    max-width: 400px;
+    font-size: 12px;
+    margin: 10px auto;
+  }
+  @include mq(tab2) {
+    margin: 20px auto;
+  }
+  span {
+    color: red;
+  }
+  input {
+    flex-direction: column;
+  }
+  label {
+    padding: 5px 15px 5px 5px;
+    font-size: 15px;
+    @include mq(sp) {
+      font-size: 10px;
+      display: inline-block;
+      width: 120px;
+    }
+    @include mq(tab) {
+      font-size: 12px;
+      display: inline-block;
+      width: 120px;
+    }
+  }
+}
+
+.paymentRadioBtn {
+  margin: 15px 40px 10px 45px;
+  @include mq(sp) {
+    max-width: 200px;
+    font-size: 10px;
+    padding-left: 0;
+  }
+  @include mq(tab) {
+    max-width: 280px;
+    font-size: 10px;
+    padding-left: 0;
+  }
+  @include mq(tab2) {
+    width: 600px;
+    font-size: 10px;
+    margin-left: 50px;
+  }
+}
+
+.information {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1600px;
+  max-height: 2500px;
+  margin: 0 auto;
+  @include mq(sp) {
+    max-width: 300px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  @include mq(tab) {
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+  @include mq(tab2) {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.input {
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: $mainColor;
+  border: solid 2px #c0c0c0;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.input:hover {
+  border: solid 2px rgb(205, 176, 109);
+}
+
+textarea {
+  width: 97%;
+  height: 5rem;
+  margin-bottom: 10px;
+}
+
+.reservateButton {
+  margin: 40px auto 10px auto;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  width: 180px;
+  height: 50px;
+  // border: 1.5px solid #6a6a6a;
+  position: relative;
+  transition: 0.3s;
+  background-color: rgb(137, 0, 0);
+  @include mq(sp) {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+.reservateButton button {
+  color: #fff;
+}
+
+.reservateMessage p {
+  text-align: center;
+  font-size: 15px;
+  color: red;
+  @include mq(sp) {
+    width: 300px;
+    text-align: center;
+    margin: 20px auto;
+  }
+}
+
+.reservateMessage svg {
+  stroke: red;
+  margin-right: 5px;
+}
+
+.reservateButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.accordionMenu button {
+  text-align: left;
+  width: 97%;
+  padding: 10px 0;
+  border-bottom: 2px solid #c0c0c0;
+}
+
+.cancel {
+  margin: 5px;
+}
+
+.cancellist {
+  margin: 5px 0;
+  span {
+    color: rgb(178, 12, 12);
+  }
+}
+
+.reservePlanList span {
+  display: inline-block;
+  width: 100px;
+  margin-left: 10px;
+}
+
+.reservePlanList li {
+  padding-top: 25px;
+}
+
+.reserveConfrimBtn button {
+  width: 90px;
+  height: 40px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  width: 150px;
+  height: 50px;
+  position: relative;
+  transition: 0.3s;
+  background-color: rgb(171, 171, 171);
+}
+
+.totalPrice {
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  font-size: 20px;
+  li {
+    padding-top: 30px;
+  }
+  @include mq(sp) {
+    font-size: 15px;
+  }
+}
+
+.innertitle {
+  display: inline-block;
+  border-bottom: 3px solid #deb887;
+}
+
+.lodgerName {
+  margin: 15px;
+  line-height: 20px;
+}
+
+.lodgerName label {
+  font-size: 14px;
+  @include mq(sp) {
+    font-size: 10px;
+  }
+}
+
+.lodgerContents {
+  margin: 15px;
+}
+
+.checkTime {
+  margin-bottom: 15px;
+}
+
+.checkTime span {
+  font-size: 10px;
+  padding: 5px;
+  background-color: rgb(220 38 38);
+  color: white;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.arrivalText {
+  margin-right: 10px;
+}
+
+.paymentContents {
+  margin: 20px 0 0 5px;
+}
+
+.payment span {
+  font-size: 10px;
+  padding: 5px;
+  margin-left: 0;
+  background-color: rgb(220 38 38);
+  color: white;
+  transform: translateY(-2px) translateX(8px);
+  position: absolute;
+  border-radius: 5px;
+  @include mq(sp) {
+    margin-left: 0;
+  }
+}
+
+.cancel {
+  margin-top: 10px;
+  line-height: 25px;
+}
+
+.cancellist {
+  background-color: rgb(227, 227, 227);
+  width: 90%;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.reservateplanBtn button {
+  display: block;
+  margin: 50px auto;
+  background-color: rgb(26, 89, 136);
+  color: #fff;
+  width: 170px;
+  height: 55px;
+  font-size: 18px;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  width: 180px;
+  height: 50px;
+  position: relative;
+  transition: 0.3s;
+  background-color: rgb(171, 171, 171);
+}
+
+.deleteMessage {
+  margin-top: 35px;
+}
+
+//Modal
+.modalStyle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modalContent {
+  background-color: $mainColor;
+  width: 700px;
+  height: 300px;
+  padding: 50px;
+  border-radius: 3px;
+  text-align: center;
+  @include mq(sp) {
+    width: 400px;
+  }
+  p {
+    margin-top: 20px;
+    font-size: 18px;
+    @include mq(sp) {
+      font-size: 16px;
+    }
+  }
+  p:nth-child(2) {
+    font-size: 14px;
+    color: rgb(178, 12, 12);
+  }
+  button {
+    margin: 50px;
+    width: 15%;
+    padding: 10px;
+    background-color: rgb(227, 227, 227);
+    @include mq(sp) {
+      width: 80px;
+      margin: 20px;
+    }
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: rgb(194, 194, 194);
+  }
+}

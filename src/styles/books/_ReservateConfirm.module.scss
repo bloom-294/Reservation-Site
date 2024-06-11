@@ -1,0 +1,50 @@
+
+
+* {
+  color: rgb(65, 65, 65);
+  max-width: auto;
+
+}
+
+//コンポーネント背景色
+$mainColor: #ffffff;
+
+//レスポンシブ
+$breakpoints: (
+  pc: "screen and (min-width:1200px)",
+  tab: "screen and (max-width:610px)",
+  sp: "screen and (max-width:414px)",
+);
+
+@mixin mq($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.confirmMessage {
+  display: block;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto 20px auto;
+  color: #deb887;
+  @include mq(sp) {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+  }
+  @include mq(tab) {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+
+.reservateConfirmTitle {
+  text-align: center;
+  margin: 50px 0 25px 0;
+  @include mq(sp) {
+    width: 500px;
+  }
+}

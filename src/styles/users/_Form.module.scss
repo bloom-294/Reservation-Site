@@ -1,0 +1,67 @@
+$red :  rgb(178, 12, 12);
+$gold : rgb(205, 176, 109);
+$gray : #C0C0C0;
+$white : #fff;
+
+// 共通
+.formMain {
+  margin:20px 0 20px 20px;
+}
+
+.labelGroup {
+  margin-bottom: 8px;
+}
+
+.mark{
+  font-size: 10px;
+  padding: 5px;
+  border-radius: 6px;
+  background-color:  $red;
+  color: $white;
+  transform: translateY(-2px) translateX(8px);
+  position: absolute;
+}
+
+.error {
+  position: absolute;
+  color: $red;
+  font-size: 14px;
+  transform: translateY(2px) translateX(55px);
+}
+
+.input {
+  border: solid 1px $gray;
+  // border-radius: 6px;
+  padding: 10px 8px;
+  background-color: $white;
+}
+
+.input:hover {
+  border: solid 1.5px $gold;
+}
+
+.NavigationIcons {
+  margin: 10px 10px;
+}
+
+// 名前のコンポーネント用
+.familyName {
+  margin-right: 20px;
+}
+
+// input部品が1つのコンポーネント用
+.widthInput {
+  width: 430px;
+  margin-right: 20px;
+}
+
+.widthInputSmall {
+  width: 230px;
+  margin-right: 20px;
+}
+
+// radioButton
+.radioButton{
+  margin: 0 15px;
+  accent-color: $gold;
+}
