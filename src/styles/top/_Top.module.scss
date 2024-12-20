@@ -80,16 +80,20 @@ $breakpoints: (
   /*描画位置*/
   position: absolute;
   display: flex;
-  bottom: 200px;
+  bottom: 10px;
   left: 50%;
   padding:100px;
   // background-color: red;
   @include mq(pc) {
-    bottom: 100px;
+    bottom: 10px;
+  }
+
+  @include mq(nest) {
+    bottom: 280px;
   }
 
   @include mq(tab) {
-    bottom: 200px;
+    bottom: 280px;
   }
 
 }
